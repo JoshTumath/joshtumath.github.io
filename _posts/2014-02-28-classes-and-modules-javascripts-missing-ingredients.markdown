@@ -13,7 +13,7 @@ In reality, JavaScript already has classes… sort of. By its very nature as a �
 
 One surprising feature of JavaScript is that functions can be used as constructors. For example:
 
-```
+```javascript
 function Animal(name, age, height) {
   this.name = name;
   this.age = age;
@@ -26,7 +26,7 @@ animal.name = "Jerry";
 
 While classes in other languages are fixed and unchanging, in JavaScript, you would create a constructor and then append methods to them later on as prototypes. For example:
 
-```
+```javascript
 Animal.prototype.toString = function () {
   return this.name + " " + this.age + " " + this.height;
 }
@@ -45,7 +45,7 @@ Clearly, there’s a need for a nicer (and less error-prone) syntax for defining
 
 Classes are really just a syntactic sugar for constructor functions. There’s nothing in the new classes syntax than what’s already possible. Here’s our Animal example again:
 
-```
+```javascript
 class Animal {
   constructor(name, age, height) {
     this.name = name;
@@ -79,7 +79,7 @@ But that doesn’t seem enough.
 
 ES6 doesn’t give a fool-proof solution to privacy. It allows the creation of a new object called `Name`, which would then get applied as a variable key, like so:
 
-```
+```javascript
 var private = new Name();
 
 class Animal {
@@ -115,8 +115,8 @@ As a result, JavaScript has changed a lot. But one problem it still suffers fro
 
 And so we now have modules! Let’s see how this is done in our Animal.js file.
 
-<pre>
-<mark>export</mark> class Animal {
+```javascript
+export class Animal {
   constructor() {
     this.name;
     this.age;
@@ -127,7 +127,7 @@ And so we now have modules! Let’s see how this is done in our Animal.js file.
     return this.name + " " + this.age + " " + this.height;
   }
 }
-</pre>
+```
 
 Simply by adding the `export` keyword, the file that contains our class is now a module, and any developer that wants to use our class can simply import it.
 
@@ -139,12 +139,12 @@ Importing is simple too. Let’s say this is our directory structure for our Web
 
 Normally, we’d have to add two `script` elements to link to both of these files. However, using modules, there’s just one thing we need to add to the main.js file:
 
-<pre>
-<mark>import "classes/Animal";</mark>
+```javascript
+import "classes/Animal";
 
 var animal = new Animal();
 // do stuff...
-</pre>
+```
 
 Modules are named after their relative directory structure, but don’t include a file extension.
 
@@ -160,5 +160,3 @@ Once we can, though, Web development is going to become a lot more exciting. Scr
 But as always, while we wait, the Web developer community have provided us with solutions for the interim. Google’s [Traceur](https://github.com/google/traceur-compiler/) can compile ES6 code for classes and modules into more widely supported JavaScript. Microsoft’s [TypeScript](http://www.typescriptlang.org/) offers a similar solution: a new scripting language based off JavaScript but with support for optional static typing.
 
 So let’s get ready for a more class-based encapsulated Web!
-
-

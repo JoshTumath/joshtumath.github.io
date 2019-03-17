@@ -18,7 +18,9 @@ This is perhaps the most hated feature of EME: the standard in itself is not a m
 
 This is what it looks like in a script:
 
-`video.setMediaKeys(new MediaKeys("com.microsoft.playready"));`
+```javascript
+video.setMediaKeys(new MediaKeys("com.microsoft.playready"));
+```
 
 To be honest, I don’t mind DRM. It doesn’t do its job very well anyway – it can always be cracked – but it keeps the media content producers happy.
 
@@ -26,7 +28,7 @@ But I *hate* EME. The Open Web Platform is open for a reason: it allows the plat
 
 You may ask: why can’t we support multiple key systems so that we can support multiple Web browsers and operating systems? That means we get into a situation like this:
 
-```
+```javascript
 function selectKeySystem() {
   if (MediaKeys.isTypeSupported("com.example.somesystem", "video/webm; codecs='vp8, vorbis'")) {
     licenseUrl = "https://license.example.com/getkey";
@@ -49,7 +51,7 @@ I probably seem like I’m contradicting myself by explaining why we should hate
 In fact, it’s been quite shocking to hear what the W3C have to say about this. Dr Jeff Jaffe, CEO of the W3C, had this to say to [ZDNet](http://www.zdnet.com/reject-drm-and-you-risk-walling-off-parts-of-the-web-says-w3c-chief-7000017388/):
 
 > We would like the Web platform to be a universal platform. We don’t think it’s good when content finds its way into walled gardens or into closed apps.
-> 
+>
 > We’re not going to standardise proprietary DRM systems, but on the other hand we don’t want it to be excluded from the web platform. The compromise is a set of open APIs that give a standard framework to bring in this content via plug-in, but where we don’t standardise the plug-in.
 
 OK. So you’re going to prevent consumers from suffering from walled gardens by introducing a means of creating walled gardens on the Web? I’d love to see how you will accomplish such a contradiction. In trying to make everyone happy (and by “everyone”, I mean the paying members of the W3C), users have been left in the dust.

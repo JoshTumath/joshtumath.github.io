@@ -6,7 +6,9 @@ tags:
 - university
 ---
 
-It's only a weekend to go now until I start at the BBC in their [Software Engineering Graduate Scheme](//www.bbc.co.uk/careers/trainee-schemes-and-apprenticeships/technology/digital-media-graduate-scheme) in Manchester, and I'm really looking forward to it. All of us on the scheme are being sent to the White City offices in London on the first week for an induction, and then to the [BBC Academy](//www.bbc.co.uk/academy) in the second week. I still have absolutely no idea where I'll be living in Manchester yet, but hopefully I'll have some idea soon! 
+![Photo of all the graduates of the Aberystwyth University Computer Science Department, class of 2016.](/assets/images/2016-09-02-graduation.jpg)
+
+It's only a weekend to go now until I start at the BBC in their [Software Engineering Graduate Scheme](//www.bbc.co.uk/careers/trainee-schemes-and-apprenticeships/technology/digital-media-graduate-scheme) in Manchester, and I'm really looking forward to it. All of us on the scheme are being sent to the White City offices in London on the first week for an induction, and then to the [BBC Academy](//www.bbc.co.uk/academy) in the second week. I still have absolutely no idea where I'll be living in Manchester yet, but hopefully I'll have some idea soon!
 
 But this time represents the end of a big era of my life. This is the end of my last ever summer holiday and my student status. Even my student card expired yesterday. No more shop discounts, because I'm not a poor student any more; just a poor adult instead[^1].
 

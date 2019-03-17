@@ -31,9 +31,9 @@ This is something I have experienced a few times myself. Sometimes with success,
 This is how the [WHATWG’s official FAQ](http://wiki.whatwg.org/wiki/FAQ#How_does_the_WHATWG_work.3F) summaries the group’s process:
 
 > People send e-mail to the mailing list. The editor then reads that feedback and, taking it into account along with research, studies, and feedback from many other sources (blogs, forums, IRC, etc) makes language design decisions intended to address everyone’s needs as well as possible while keeping the language consistent.
-> 
+>
 > This continues, with people sending more feedback, until nobody is able to convince the editor to change the spec any more (e.g. because two people want opposite things, and the editor has considered all the information available and decided that one of the two proposals is the better one).
-> 
+>
 > This is not a consensus-based approach — there’s no guarantee that everyone will be happy! There is also no voting.
 
 While that’s obviously more tongue-and-cheek, there is some truth in it. In my opinion, Hickson pretty much always makes the right call.
@@ -68,11 +68,10 @@ For many years now, a HTML element has been proposed called `main`, but it was n
 
 However, there was a huge difference in each spec’s definition of the element.
 
-<figure><figcaption>W3C definition</figcaption>> The `main` element represents the main content of the `body` of a document or application. The main content area consists of content that is directly related to or expands upon the central topic of a document or central functionality of an application.
+* **W3C definition:** The `main` element represents the main content of the `body` of a document or application. The main content area consists of content that is directly related to or expands upon the central topic of a document or central functionality of an application.
+* **WHATWG definition:** The `main` element can be used as a container for the dominant contents of another element. It represents its children.
 
-</figure><figure><figcaption>WHATWG definition</figcaption>> The `main` element can be used as a container for the dominant contents of another element. It represents its children.
-
-</figure>According to the W3C, the `main` element represents the main content of the Web page. This is useful, mainly because it allows blind users using assistive technology to skip through a page’s logo and navigation and get to the content of the page. However, the WHATWG’s definition is ambiguous and makes the element no more useful than a `div`. It’s no surprise that Web developers go by the W3C’s definition.
+According to the W3C, the `main` element represents the main content of the Web page. This is useful, mainly because it allows blind users using assistive technology to skip through a page’s logo and navigation and get to the content of the page. However, the WHATWG’s definition is ambiguous and makes the element no more useful than a `div`. It’s no surprise that Web developers go by the W3C’s definition.
 
 If you’d like something to read in bed this evening, read this [childish argument between Steve Faulkner, editor of the W3C HTML spec, and Ian Hickson](http://html5doctor.com/the-main-element/#comment-35758). The debate gets to the point where Hickson remarks: “I’m not responding to Steve any more since he’s obviously just trolling me with statements he must surely know are incorrect.)” In this case, I shared my opinion with Faulkner. However, there are some times where I believe that the WHATWG spec uses a better definition of a feature. There is no clear side to turn to. And when you see members from both groups arguing like that, that makes it even more appalling.
 

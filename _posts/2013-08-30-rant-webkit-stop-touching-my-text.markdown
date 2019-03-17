@@ -10,7 +10,7 @@ Normally, when I’m developing a Web site, I can’t test it on Safari on iOS. 
 
 When a Web browser is used on a device with a small screen (like a smartphone or an iPod), the browser zooms out to show the full width of the page when viewing a Web site that’s made for large screens. This makes the text very tiny, so the browser tries to enlarge small text if it can. However, if we’re using [responsive Web design](http://joshtumath.me.uk/2013/08/14/the-importance-of-responsive-web-design/ "The importance of responsive web design") to support small screen sizes, we can use a non-standard type of metadata to tell the browser “Please don’t treat my page as if it were made for desktop PCs. I’ve designed it to support different viewport sizes.”
 
-```
+```html
 <meta name="viewport" content="width=device-width">
 ```
 

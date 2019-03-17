@@ -18,7 +18,7 @@ That’s not to say Rust is basic and bare-bones like C, either. The syntax may 
 
 Let’s start with a Hello World:
 
-```
+```rust
 fn main() {
   let thing = "World";
   println!("Hello {}", thing);
@@ -34,9 +34,9 @@ When writing functions in other languages, many local variables that I write don
 
 However, in a language that prioritises “safety”, dynamically typed variables don’t seem to be very safe. Absolutely any value could be passed in and stored, which can especially be a problem when trying to enforce what data can be passed into a function via a parameter. Luckily, Rust comes to the rescue and allows us to declare types for variables too.
 
-<pre>
+```rust
 fn main() {
-  let mut thing: <mark>~str</mark> = "World";
+  let mut thing: ~str = "World";
   println!("Hello {}", thing);
   // Output: Hello World
 
@@ -44,7 +44,7 @@ fn main() {
   println!("Hello {}", thing);
   // Compiling error: 123 is not a string
 }
-</pre>
+```
 
 Earlier, I mentioned `println` has an exclamation mark. This means it is actually a macro. These extend the syntax to allow you to do repetitive actions that couldn’t be put in a normal function.
 
@@ -55,7 +55,7 @@ I mentioned earlier that Rust is object-orientated, but not exactly. The languag
 
 Rust doesn’t have classes. But it does have structs and enums, and something known as traits. Here’s how “object-orientation” works in Rust:
 
-```
+```rust
 enum Gender {
   Male,
   Female
@@ -100,7 +100,7 @@ Traits extend this even more. They’re similar to interfaces and abstract class
 
 Typical for loops do not exist in Rust for safety reasons. Normally, for loops are used to increment an integer each cycle and then stop after reaching a certain value. However, Rust *does* have what other languages would call “for each” loops. These are much easier to use. You can simulate a typical C-like loop like so:
 
-```
+```c
 // ANSI C
 void my_loop() {
   int i;
@@ -109,7 +109,8 @@ void my_loop() {
     // ...
   }
 }
-
+```
+```rust
 // Rust
 fn my_loop() {
   for i in range(0, 9) {

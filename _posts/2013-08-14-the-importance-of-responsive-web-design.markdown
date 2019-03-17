@@ -46,7 +46,7 @@ The CSS comes next. In your first CSS file, don’t apply any media queries. Thi
 
 After this, you can create stylesheets for larger screen sizes. Each stylesheet will inherit the styles from stylesheets for smaller screens. For example:
 
-```
+```html
 <link rel="stylesheet" href="css/320.css">
 <link rel="stylesheet" href="css/480.css" media="(min-width: 480px)">
 <link rel="stylesheet" href="css/600.css" media="(min-width: 600px)">
@@ -78,5 +78,3 @@ Users appreciate Web sites that use responsive design, because they don’t targ
 ## See also
 
 * [How to Approach a Responsive Design](http://upstatement.com/blog/2012/01/how-to-approach-a-responsive-design/) - <small>Tito Bottitta</small>
-
-
