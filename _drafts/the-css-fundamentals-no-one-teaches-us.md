@@ -26,8 +26,41 @@ We can see this for ourselves by adding a border around every element.
 }
 ```
 
-## 2. Everything is part of 'the flow' by default
+## 2. Every box is laid out in 'the flow' by default
+
+[picture of rows of boxes]
+
+There are different types of boxes in our toolbox. Inline boxes, block boxes, flex boxes, grid boxes, table boxes, list-item boxes, inline-block boxes, inline-grid boxes, inline-flex boxes....
+
+There's quite a lot! But these can be drilled down into two categories:
+
+* Block boxes
+* Inline boxes
+
+**Block boxes** are boxes that appear one after the other. This blog post starts with a block containing the heading, a block containing an image, a block containing a paragraph, a block containing a sample of code and so on.
+
+[picture of rows of boxes]
+
+**Inline boxes** are boxes that appear - as their name would suggest - within lines of text. If some text is _emphasised_, that means it is in a inline box with the CSS property `font-style: italic` set on it.
+
+[picture of rows of text]
+
+The CSS `display` property is what's used to set which type of box a box will be.
+
+```css
+.poster-image {
+  display: block
+}
+```
+
+So what about all those other types of boxes like `grid`, `flex` and `table`? This is where it gets a bit confusing, because they aren't actually the types of boxes; they set how the boxes inside that box are laid out! Recently, the way the `display` property works got updated to better reflect this. You can now specify a _display-outer_ and _display-inner_.
+
+For example, `display: block` is the same as writing `display: block flow`. `block` is the _display-outer_ (the type of block) and `flow` is the _display-inner_ (the way that the boxes inside are laid out). The `flow` value is the default layout method that we're used to, where all blocks appear one after the other. But we could change it to `grid`, enabling things to be laid out very differently! You can read up on different layout methods on [MDN](https://developer.mozilla.org/).
 
 ## 3. Every box follows the Box Model
 
 ## 4. Margins can overlap each other!
+
+This one throws everyone off guard! 
+
+## 5. The browser has a default HTML stylesheet
