@@ -59,8 +59,65 @@ For example, `display: block` is the same as writing `display: block flow`. `blo
 
 ## 3. Every box follows the Box Model
 
-## 4. Margins can overlap each other!
+Boxes are actually made up of four layers. Starting in the middle, we have:
 
-This one throws everyone off guard! 
+1. the content box
+2. the padding box
+3. the border box
+4. the margin box
 
-## 5. The browser has a default HTML stylesheet
+[diagram of box model]
+
+Most browsers' developer tools will show you a diagram like the one above when you inspect an element.
+
+You can of course set the width of these boxes using the `width`/`height`, `padding`, `border-width` and `margin` properties, respectively.
+
+## 4. Width and height size the content box by default
+
+When you use the `width` and `height` properties to set the size of a box, you're actually setting the size of the content box.
+
+To picture how boxes are sized in the box model, I always imagine someone pushing against the sides of the box. To size the box, they're pushing against the edges of the content box.
+
+[picture of a person pushing against the sides of the box]
+
+You can change this behaviour very easily with a CSS property called `box-sizing`. By default, it's set to `box-sizing: content-box`, but you can change the value to `border-box`. This will cause the box to be sized the way you might expect it to be.
+
+## 5. Margins can overlap each other!
+
+This one throws everyone off guard! Top and bottom margins can collapse into each other.
+
+How big do you think the gap between these two paragraph boxes will be?
+
+```html
+<style>
+  p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border: thin solid green;
+  }
+</style>
+
+<p>How big…</p>
+<p>…is the gap?</p>
+```
+
+You might expect it to be a 2 em gap, but it's actually only one! The margins collapse into each other. This is true even if one of the boxes is a child rather than a sibling.
+
+```html
+<p>The gap is still…</p>
+<div>
+  <p>…only 1em</p>
+</div>
+```
+
+This can cause a lot of confusion, so it's good to be aware of it.
+
+## 6. The browser has a default HTML stylesheet
+
+Every CSS property has an 'initial' setting that's applied to all elements by default. Text color is always `black`. Font weight is always `normal`. Box padding is always `0`.
+
+So why is it that, on Web pages, hyperlinks are always blue and underlined, headings are always blocks with a large bold font and keyboard focused elements always has a dotted border around them?
+
+The answer is that every browser has a default stylesheet used on every HTML document.
+
+It varies slightly between each browser, but it's mostly the same. You can check it out in [the HTML specification's Rendering section](https://html.spec.whatwg.org/multipage/rendering.html).
