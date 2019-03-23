@@ -112,7 +112,56 @@ You might expect it to be a 2 em gap, but it's actually only one! The margins co
 
 This can cause a lot of confusion, so it's good to be aware of it.
 
-## 6. The browser has a default HTML stylesheet
+## 6. Pseudo-elements don't appear unless they have content
+
+A pseudo-element is a box that doesn't actually exist in the HTML DOM. They are created with a selector that has something like `::before` or `::first-letter` in it.
+
+Some pseudo-elements like `::first-letter` wrap existing content in a box so that you can style it more easily.
+
+```html
+<style>
+  p::first-letter {
+    float: left;
+    font-size: 2em;
+  }
+</style>
+
+<p><::first-letter>H</::first-letter>ow Aberystwyth is tackling the problem of seagull litter</p>
+```
+
+<video src="https://media.giphy.com/media/11wMQAPRnXaVoc/giphy.mp4" autoplay loop></video>
+
+Other pseudo-elements like `::before` and `::after` don't have any content.
+
+```html
+<style>
+  .note::before {
+    content: 'Note: ';
+  }
+</style>
+
+<p class="note">The cake is a lie.</p>
+```
+
+If we don't include the `content`, the pseudo-element won't render.
+
+```html
+<style>
+  h2::before {
+    /* This won't render unless we include some content. */
+    content: '';
+
+    display: block;
+    width: 90%;
+    border-top: thin solid grey;
+  }
+</style>
+
+<h2>Today's weather forecast</h2>
+<p>It's terrible.</p>
+```
+
+## 7. The browser has a default HTML stylesheet
 
 Every CSS property has an 'initial' setting that's applied to all elements by default. Text color is always `black`. Font weight is always `normal`. Box padding is always `0`.
 
