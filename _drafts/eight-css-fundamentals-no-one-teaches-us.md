@@ -1,4 +1,10 @@
-# The CSS fundamentals no one teaches us
+---
+layout: post
+title: Eight CSS fundamentals no one teaches us
+# date: '2019-03-23 20:10:53'
+tags:
+- css
+---
 
 [picture of someone scratching their head with a toolbox]
 
@@ -6,9 +12,9 @@ When learning to develop for the Web, do you ever feel like you're being taught 
 
 That's how I felt when I was learning CSS ten years ago. It's empowering to know how to make the font size bigger, centre the text and float an image to the left, but how do you make boxes appear side-by-side (there was no flex box in those days)? And how do you stop `position: absolute` content from being positioned relative to the whole? And why is it that when I add a margin to a `div` element, it works, but when I add a margin to an `a` element, nothing happens?
 
-Without a grasp of the fundamentals of how CSS works, most of the many 'tools' we have in CSS don't make any sense. It making CSS seem very complicated and difficult to master if you're new to Web development, whether you're new to programming in general or you come from an app development background.
+Without a grasp of the fundamentals of how CSS works, most of the many 'tools' we have in CSS don't make any sense. It makes anyone who's new to CSS feel like they're trying to herd sheep who are intent on going the opposite direction to where they've been ordered.
 
-These are three foundational things that I think make CSS much easier to understand once you're aware of them.
+These are eight foundational things about CSS that I think make it much easier to understand once you're aware of them.
 
 ## 1. Everything is a box
 
@@ -169,7 +175,8 @@ Some pseudo-elements like `::first-letter` wrap existing content in a box so tha
   }
 </style>
 
-<p><::first-letter>H</::first-letter>ow Aberystwyth is tackling the problem of seagull litter</p>
+<p><::first-letter>H</::first-letter>ow Aberystwyth is tackling the problem of
+seagull litter</p>
 ```
 
 <video src="https://media.giphy.com/media/11wMQAPRnXaVoc/giphy.mp4" autoplay loop></video>
@@ -191,7 +198,7 @@ If we don't include the `content`, the pseudo-element won't render.
 ```html
 <style>
   h2::before {
-    /* This won't render unless we include some content. */
+    /* We're creating an empty string of content so that this will render. */
     content: '';
 
     display: block;
