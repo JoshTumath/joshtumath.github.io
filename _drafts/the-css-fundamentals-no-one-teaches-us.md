@@ -112,7 +112,50 @@ You might expect it to be a 2 em gap, but it's actually only one! The margins co
 
 This can cause a lot of confusion, so it's good to be aware of it.
 
-## 6. Pseudo-elements don't appear unless they have content
+## 6. You can change what an absolutely positioned box is positioned relative to
+
+_I'm sorry for the very confusingly worded heading._
+
+Using the CSS property `position: absolute` allows you to position a box anywhere on the page, which is very useful!
+
+```html
+<style>
+  button {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+  }
+</style>
+
+<body>
+  <button>Close</button>
+</body>
+```
+
+But what if you want the box to be positioned relative to another box rather than the whole page? You can do that by setting the `position` property on one of its containing boxes.
+
+```html
+<style>
+  .ad {
+    position: relative;
+  }
+
+  .ad button {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+</style>
+
+<body>
+  <aside class="ad">
+    <img src="free-pizza.jpg" alt="Free pizza!!!">
+    <button>Close</button>
+  </aside>
+</body>
+```
+
+## 7. Pseudo-elements don't appear unless they have content inside
 
 A pseudo-element is a box that doesn't actually exist in the HTML DOM. They are created with a selector that has something like `::before` or `::first-letter` in it.
 
@@ -161,7 +204,7 @@ If we don't include the `content`, the pseudo-element won't render.
 <p>It's terrible.</p>
 ```
 
-## 7. The browser has a default HTML stylesheet
+## 8. The browser has a default HTML stylesheet
 
 Every CSS property has an 'initial' setting that's applied to all elements by default. Text color is always `black`. Font weight is always `normal`. Box padding is always `0`.
 
