@@ -6,23 +6,22 @@ tags:
 - css
 ---
 
-[picture of someone scratching their head with a toolbox]
+![Someone stands in front of a toolbox, confused about what to do.](/assets/images/2019-04-03-toolbox-confused.png)
 
 When learning to develop for the Web, do you ever feel like you're being taught about all the tools in a toolbox, but not how to actually use them? It's all well and good knowing how to drill a hole, but how do you go from that to using the drill, and the screwdriver, and the winch, and the hammer to make a kitchen?
 
-That's how I felt when I was learning CSS ten years ago. It's empowering to know how to make the font size bigger, centre the text and float an image to the left, but how do you make boxes appear side-by-side (there was no flex box in those days)? And how do you stop `position: absolute` content from being positioned relative to the whole? And why is it that when I add a margin to a `div` element, it works, but when I add a margin to an `a` element, nothing happens?
+That's how I felt when I was learning CSS ten years ago. It's empowering to know how to make the font size bigger, centre the text and float an image to the left, but how do you make navigation bar links appear side-by-side? And how do you make `position: absolute` content be positioned relative to what you want? And why is it that when you add a margin to a `div` element, it works, but when you add a margin to a `strong` element, nothing happens?
 
-Without a grasp of the fundamentals of how CSS works, most of the many 'tools' we have in CSS don't make any sense. It makes anyone who's new to CSS feel like they're trying to herd sheep who are intent on going the opposite direction to where they've been ordered.
+Without a grasp of the fundamentals of how CSS works, most of the many 'tools' we have in CSS don't make any sense. It makes anyone who's new to CSS feel like they're herding sheep.
 
 These are eight foundational things about CSS that I think make it much easier to understand once you're aware of them.
 
 ## 1. Everything is a box
+![Boxes on the web page are created from the DOM tree.](/assets/images/2019-04-03-dom-boxes.png)
 
-[picture of DOM tree and boxes]
+After downloading some HTML, your user's Web browser parses it and creates the DOM, or Document Object Model. This is a tree of all the HTML elements on a page. The browser then takes all of these elements in the DOM, and turns them into boxes!
 
-When crafting HTML, your user's Web browser parses this and creates the DOM, or Document Object Model. This is a tree of all the HTML elements on a page. The browser then takes all of these elements in the DOM, and turns them into boxes!
-
-Unless an element is hidden, it will be rendered as a rectangular box. Whether it's a `table` element, a `div` element, a `p` (paragraph) element, an `li` (list item) element or even a little `em` (emphasised text) element, it will get turned into a box by the browser.
+Unless an element is hidden, it will be rendered as a rectangular box. Whether it's a `table` element, a `div` element, a `p` (paragraph) element, an `li` (list item) element or even a cheeky `em` (emphasised text) element, it will get turned into a box by the browser.
 
 We can see this for ourselves by adding a border around every element.
 
@@ -33,9 +32,6 @@ We can see this for ourselves by adding a border around every element.
 ```
 
 ## 2. Every box is laid out in 'the flow' by default
-
-[picture of rows of boxes]
-
 There are different types of boxes in our toolbox. Inline boxes, block boxes, flex boxes, grid boxes, table boxes, list-item boxes, inline-block boxes, inline-grid boxes, inline-flex boxes....
 
 There's quite a lot! But these can be drilled down into two categories:
@@ -45,11 +41,11 @@ There's quite a lot! But these can be drilled down into two categories:
 
 **Block boxes** are boxes that appear one after the other. This blog post starts with a block containing the heading, a block containing an image, a block containing a paragraph, a block containing a sample of code and so on.
 
-[picture of rows of boxes]
+![](/assets/images/2019-04-03-block-boxes.png)
 
 **Inline boxes** are boxes that appear - as their name would suggest - within lines of text. If some text is _emphasised_, that means it is in a inline box with the CSS property `font-style: italic` set on it.
 
-[picture of rows of text]
+![](/assets/images/2019-04-03-inline-boxes.png)
 
 The CSS `display` property is what's used to set which type of box a box will be.
 
@@ -72,7 +68,7 @@ Boxes are actually made up of four layers. Starting in the middle, we have:
 3. the border box
 4. the margin box
 
-[diagram of box model]
+![](/assets/images/2019-04-03-box-model.png)
 
 Most browsers' developer tools will show you a diagram like the one above when you inspect an element.
 
@@ -82,11 +78,11 @@ You can of course set the width of these boxes using the `width`/`height`, `padd
 
 When you use the `width` and `height` properties to set the size of a box, you're actually setting the size of the content box.
 
-To picture how boxes are sized in the box model, I always imagine someone pushing against the sides of the box. To size the box, they're pushing against the edges of the content box.
+To picture how boxes are sized in the box model, I always imagine someone pushing against the sides of the box. To set the size the box, they're pushing against the edges of the content box.
 
-[picture of a person pushing against the sides of the box]
+![](/assets/images/2019-04-03-box-model-pushed.png)
 
-You can change this behaviour very easily with a CSS property called `box-sizing`. By default, it's set to `box-sizing: content-box`, but you can change the value to `border-box`. This will cause the box to be sized the way you might expect it to be.
+You can change this behaviour very easily with a CSS property called `box-sizing`. By default, it's set to `box-sizing: content-box`, but you can change the value to `border-box`. This will cause the box to be sized by pushing against the border box, which can make a lot more sense in some situations.
 
 ## 5. Margins can overlap each other!
 
