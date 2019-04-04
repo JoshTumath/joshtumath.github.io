@@ -209,7 +209,7 @@ If we don't include the `content`, the pseudo-element won't render.
 
 Every CSS property has an 'initial' setting that's applied to all elements by default. Text color is always `black`. Font weight is always `normal`. Box padding is always `0`.
 
-So why is it that, on Web pages, hyperlinks are always blue and underlined, headings are always blocks with a large bold font and keyboard focused elements always has a dotted border around them?
+So why is it that, on Web pages, hyperlinks are always blue and underlined, headings are always blocks with a large bold font and keyboard focused elements always have a dotted border around them?
 
 The answer is that every browser has a default stylesheet used on every HTML document.
 
