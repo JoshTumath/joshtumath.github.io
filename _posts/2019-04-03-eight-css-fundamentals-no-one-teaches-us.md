@@ -8,7 +8,7 @@ tags:
 
 ![Someone stands in front of a toolbox, confused about what to do.](/assets/images/2019-04-03-toolbox-confused.png)
 
-When learning to develop for the Web, do you ever feel like you're being taught about all the tools in a toolbox, but not how to actually use them? It's all well and good knowing how to drill a hole, but how do you go from that to using the drill, and the screwdriver, and the winch, and the hammer to make a kitchen?
+When learning to develop for the Web, do you ever feel like you're being taught about all the tools in a toolbox, but not how to actually use them together to build something? If you want to assemble a shed, it's all well and good learning how to use a power drill to drill a hole in a plank of wood, but how do you use that tool along with a screwdriver, a saw to actually build a wall or a roof or a door?
 
 That's how I felt when I was learning CSS ten years ago. It's empowering to know how to make the font size bigger, centre the text and float an image to the left, but how do you make navigation bar links appear side-by-side? And how do you make `position: absolute` content be positioned relative to what you want? And why is it that when you add a margin to a `div` element, it works, but when you add a margin to a `strong` element, nothing happens?
 
@@ -47,7 +47,7 @@ There's quite a lot! But these can be drilled down into two categories:
 
 ![](/assets/images/2019-04-03-inline-boxes.png)
 
-The CSS `display` property is what's used to set which type of box a box will be.
+The CSS `display` property is used to set which type of box a box will be.
 
 ```css
 .poster-image {
@@ -55,9 +55,9 @@ The CSS `display` property is what's used to set which type of box a box will be
 }
 ```
 
-So what about all those other types of boxes like `grid`, `flex` and `table`? This is where it gets a bit confusing, because they aren't actually the types of boxes; they set how the boxes inside that box are laid out! Recently, the way the `display` property works got updated to better reflect this. You can now specify a _display-outer_ and _display-inner_.
+What about all those other types of boxes like `grid`, `flex` and `table`? This is where it gets a bit confusing, because they aren't the _types_ of boxes; they set how the inner boxes are laid out! Recently, the way the `display` property works got updated to better reflect this. You can now specify a _display-outer_ and _display-inner_.
 
-For example, `display: block` is the same as writing `display: block flow`. `block` is the _display-outer_ (the type of block) and `flow` is the _display-inner_ (the way that the boxes inside are laid out). The `flow` value is the default layout method that we're used to, where all blocks appear one after the other. But we could change it to `grid`, enabling things to be laid out very differently! You can read up on different layout methods on [MDN](https://developer.mozilla.org/).
+For example, `display: block` is the same as writing `display: block flow`. `block` is the _display-outer_ (the type of block) and `flow` is the _display-inner_ (the way that the inner boxes are laid out). The `flow` value is the default layout method that we're used to, where all blocks appear one after the other, but we could change it to `grid`, enabling things to be laid out very differently! You can read up on different layout methods on [MDN](https://developer.mozilla.org/).
 
 ## 3. Every box follows the Box Model
 
@@ -70,9 +70,7 @@ Boxes are actually made up of four layers. Starting in the middle, we have:
 
 ![](/assets/images/2019-04-03-box-model.png)
 
-Most browsers' developer tools will show you a diagram like the one above when you inspect an element.
-
-You can of course set the width of these boxes using the `width`/`height`, `padding`, `border-width` and `margin` properties, respectively.
+Most browsers' developer tools will show you a diagram like the one above when you inspect an element. You can of course set the width of these boxes using the `width`/`height`, `padding`, `border-width` and `margin` properties, respectively.
 
 ## 4. Width and height size the content box by default
 
